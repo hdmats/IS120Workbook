@@ -1,15 +1,173 @@
+:root
+{
+    --moss-color:  #5E6A4B;
+    --sage-color:  #A1A491;
+    --sand-color:  #D6BF99;
+    --mud-color:   #987955;
+    --river-color: #003366;
+    --default-color: #616161;
+    --body-color: #E2D7CB;
+}
+
 @font-face {
     font-family: Geo;
     src: url(Fonts/GeosansLight.ttf);
 }
+
 @font-face {
     font-family: Road;
     src: url(Fonts/Roadgeek\ 2005\ Series\ 1B\ Regular.ttf);
 }
-h1 {color:#5E6A4B; font-size: 80px; font-style: bold; font-family: Road; margin: 0px;}
-h2 {style:bold; color:#A1A491; font-size: 30px; font-family: Road;}
-h3 {color:#A1A491; font-size: 20px; font-family: Geo;}
-h4 {color:#003366; font-size: 25px; font-family: Road;}
-h5 {color:#5E6A4B; font-size: 20px; font-family: Geo;}
-p {font-size: 18px; font-family: Geo;Color:#616161}
-body{background-color:#E2D7CB;}
+
+img.fall
+{
+    width:100%;
+    display:block;
+    object-fit: cover;
+    object-position: 50% 70%;
+}
+
+img.svg
+{   
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.hero 
+{
+    position: relative;
+}
+
+  h1.logo {
+    display: inline-block;
+    color: white;
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1;
+    text-shadow: 0 0 6px #000;
+    font-family:Road;
+  
+    position: absolute;
+    left: 2.5rem;
+    bottom: 1rem;
+  }
+  
+  h1.logo span {
+    font-family: Geo;
+
+    display: block;
+    font-weight: 400;
+    text-transform: lowercase;
+    /* to position the underline in ::after    */
+    position: relative;
+    bottom:4rem;
+  }
+
+  h1.logo span::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    height: 3px;
+    width: 100%;
+    background-color: white;
+  }  
+h2 
+
+{
+    font-weight:bold; 
+    color:var(--sage-color); 
+    font-size: 30px; 
+    font-family: Road;
+    line-height: 50%;
+}
+
+h3 
+{
+    color:var(--sage-color); 
+    font-size: 20px; 
+    font-family: Geo;
+}
+
+h4 
+{
+    color: var(--river-color); 
+    font-size: 25px; 
+    font-family: Road;
+}
+
+h5 
+{
+    color: var(--moss-color); 
+    font-size: 20px; 
+    font-family: Geo;
+}
+
+body
+{
+    background-color:var(--body-color);
+}
+
+main
+{
+    margin: 0 auto;
+    padding: 0 1rem;
+    max-width: 60rem;
+}
+
+.about
+{
+    margin-top: 5em;
+    margin-bottom: 8em;
+}
+main.about h1
+{
+    color: var(--river-color); 
+    font-size: 48px; 
+    font-family: Road;
+}
+
+main.form h1
+{
+    color: var(--river-color); 
+    font-size: 48px; 
+    font-family: Road;
+}
+
+main p 
+{
+    font-size: 18px; 
+    font-family: Geo;
+    color: var(--default-color);
+    line-height: 1.5;
+}
+
+
+a
+{
+    display: inline-block;
+}
+  
+.btn 
+{
+    background-color: transparent;
+    border: 1px solid var(--default-color);
+    border-radius: 24px;
+    padding: 8px 32px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 500ms ease;
+    color: var(--default-color);
+    text-decoration: none;
+}
+.btn:hover 
+{
+    background-color: #ffffff60;
+    border-color: #fff0;
+    transform: scale(1.01);
+}
