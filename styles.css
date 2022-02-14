@@ -149,6 +149,12 @@ main p
 a
 {
     display: inline-block;
+    text-decoration: none;
+    color: var(--default-color);
+    cursor: pointer;
+}
+a:visited{
+    color: var(--default-color);
 }
   
 .btn 
