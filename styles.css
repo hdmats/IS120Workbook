@@ -176,3 +176,72 @@ a:visited{
     border-color: #fff0;
     transform: scale(1.01);
 }
+img{
+    display: block;
+    width: 100%;
+  }
+  .img-wrapper{
+    overflow: hidden;
+    height: 300px;
+    width: 300px;
+  }
+  .card img{
+    transition: transform 500ms;
+  }
+  .card{
+    position: relative;
+    display: inline-block;
+    transition: transform 200ms;
+    overflow: hidden;
+  }
+  
+  .card:hover img{
+    transform: scale(1.05);
+  }
+  .card .title-wrap{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    display: flex;
+    justify-content: center;
+  }
+  .title-wrap p{
+    margin: 3rem;
+    font-size: 48px;
+    font-family: Road;
+    color: #002952;
+    transition: margin 300ms ease-in-out;
+  }
+  .card:hover .title-wrap{
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  .card:hover .title-wrap p{
+    color: White;
+    transition: color 200ms ease-in-out;
+    margin-right: 10rem;
+    text-decoration: underline white;
+    transition: margin 300ms ease-in-out;
+  }
+  .card .desc-wrap{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 1.5rem;
+    right: 3rem;
+    margin-top: 8rem;
+
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear, margin 500ms ease;
+  }
+  .card:hover .desc-wrap{
+    visibility: visible;
+    opacity:1;
+    margin-top: 6rem;
+  }
+  .card .desc-wrap p{
+    color: white;
+    font-family: Geo;
+  }
