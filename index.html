@@ -22,20 +22,22 @@
 </head>
 <!--Learn OG!!!!!!!!-->
 <body> 
-    <header>
-        <nav>
-            <div class="menu-icon">
-                <div>  
-                </div>
-            </div>
-            <ul>
-                <li><a>home</a></li>
-                <li><a href="about/">about</a></li>
-                <li><a href="form/">form</a></li>
-            </ul>
-        </nav>
-    </header>
     <div class="hero">
+        <div class="header-wrapper">
+            <header>
+                <nav>
+                    <div class="menu-icon">
+                        <div>  
+                        </div>
+                    </div>
+                    <ul>
+                        <li><a href="about/" class="active">about</a></li>
+                        <li><a class="homebutton">home</a></li>
+                        <li><a href="form/" class="active">form</a></li>
+                    </ul>
+                </nav>
+            </header>
+            </div>
         <picture>  
             <source srcset="images/hero_1600w.jpg" 
                    media="(min-width: 901px)">
@@ -56,6 +58,7 @@
     <h3> EST 2022</h3>
     <!--About Section-->
     <article class="about">
+    <div class="text">
     <h4><u>ABOUT</u></h4>
 
     <h5>Who We Are</h5>
@@ -75,29 +78,42 @@
         ultimately determine project entitlement. While each community has its own zoning, subdivision, design, and development regulations many commonalities exist. The key is 
         knowing how the pieces work together, or against each other. Marty knows how to put the puzzle pieces together. 
     </p>
+    </div>
+    <div class="img"> <img src="images/bunch-blueprints.jpg"></div>
     </article>
 
     <!--FAQS Section-->
+    </main>
+    <aside class="faqs-title">
+    HOW WE CAN HELP
+    </aside>
+    <main>
     <article class="faqs">
-    <h4><u>HOW WE CAN HELP</u></h4>
-
+    <div>
     <h5>Do you own a piece of land or want to purchase a piece of land for development?</h5>
         <p>We can help you understand what you can develop on that piece of land, by right.</p>
-
+    </div>
+    <div>
     <h5>Do you want to do something different on a piece of land than what is currently allowed?</h5>
         <p>We can help you understand the processes and regulations that will get you where you want to go.</p>
-
+    </div>
+    <div>
     <h5>Do you need to put together a team?</h5>
         <p>We can help you find the Engineers, Designers, Architects you will need for a successful application.</p>
-
+    </div>
+    <div>
     <h5>Do you have a team or is your project stuck in process purgatory?</h5>
         <p>We can help with the understanding and communication  that will get things moving again.</p>
-
+    </div>
+    <div>
     <h5>Do you have a project that needs some extra outreach or community communication?</h5>
         <p>We can help with those conversations and facilitate community meetings. </p>
+    </div>
     </article>
+    </main>
     <div class="cards">
         <div class="card">
+            <a>
           <div class="img-wrapper">
           <img src="images/project.jpg" alt="man writing on plans">
           </div>
@@ -108,10 +124,53 @@
                 <p>check out FCP's current and past projects</p>
             </div>
           <div class="text"></div>
+          </a>
         </div>
+        <div class="card">
+            <a>
+            <div class="img-wrapper">
+            <img src="images/resources.jpg" alt="paper with graph">
+            </div>
+              <div class="title-wrap">
+                <p>Resources</p>
+              </div>
+              <div class="desc-wrap">
+                  <p>click here for more resources</p>
+              </div>
+            <div class="text"></div>
+            </a>
+          </div>
+          <div class="card">
+              <a>
+            <div class="img-wrapper">
+            <img src="images/schedule.jpg" alt="calendar">
+            </div>
+              <div class="title-wrap">
+                <p>Schedule</p>
+              </div>
+              <div class="desc-wrap">
+                  <p>schedule a meeting time</p>
+              </div>
+            <div class="text"></div>
+            </a>
+          </div>
+          <div class="card">
+              <a>
+            <div class="img-wrapper">
+            <img src="images/reviews.jpg" alt="construction worker on foundation">
+            </div>
+              <div class="title-wrap">
+                <p>Reviews</p>
+              </div>
+              <div class="desc-wrap">
+                  <p>See recommendations for other developers in the community</p>
+              </div>
+            <div class="text"></div>
+            </a>
+          </div>
       </div>
      <img class="svg" src="images/mountains.svg" alt="road leading to mountians SVG" height="100" width="100"/>
-    </main>
+    
     <script>
     document.querySelector("nav").addEventListener("click", function () {
         this.classList.toggle("close");
