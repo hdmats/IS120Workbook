@@ -18,7 +18,9 @@
     font-family: Road;
     src: url(Fonts/Roadgeek\ 2005\ Series\ 1B\ Regular.ttf);
 }
-
+*{
+  box-sizing: border-box;
+}
 img.fall
 {
     width:100%;
@@ -154,8 +156,7 @@ section
   overflow: hidden;
   object-fit: cover;
 }
-main.about,
-main.form {
+main.about{
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -167,13 +168,6 @@ main.about .btnwrap{
 }
 
 main.about h1
-{
-    color: var(--river-color); 
-    font-size: 48px; 
-    font-family: Road;
-}
-
-main.form h1
 {
     color: var(--river-color); 
     font-size: 48px; 
@@ -218,14 +212,14 @@ section p
 .btn 
 {
     background-color: transparent;
-    border: 1px solid var(--default-color);
+    border: 1px solid white;
     border-radius: 24px;
     padding: 8px 32px;
     text-align: center;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 500ms ease;
-    color: var(--default-color);
+    color: white;
     text-decoration: none;
 }
 .btn:hover 
@@ -320,75 +314,170 @@ img{
       color: white;
       font-family: Geo;
     }
-  .form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 40vh;
+  .formMain{
+    margin: 8rem 0;
+    text-align: center;
   }
-  .loader {
-    width: 90px;
-    height: 90px;
-    display: flex;
-    flex-wrap: wrap;
+  .formMain h1{
+    font-size: 48px;
+    color:var(--river-color);
+    font-family: Road;
   }
-  
-  .loader div {
-    width: 30px;
-    height: 30px;
-    background-color: var(--moss-color);
-    border-radius: 30%;
-    animation: cube-grid 1300ms infinite ease-in-out;
-  }
-  
-  .loader div:nth-child(1) {
-    animation-delay: 200ms;
-  }
-  
-  .loader div:nth-child(2) {
-    animation-delay: 300ms;
-  }
-  
-  .loader div:nth-child(3) {
-    animation-delay: 400ms;
-  }
-  
-  .loader div:nth-child(4) {
-    animation-delay: 100ms;
-  }
-  
-  .loader div:nth-child(5) {
-    animation-delay: 200ms;
-  }
-  
-  .loader div:nth-child(6) {
-    animation-delay: 300ms;
-  }
-  
-  .loader div:nth-child(7) {
-    animation-delay: 0s;
-  }
-  
-  .loader div:nth-child(8) {
-    animation-delay: 100ms;
-  }
-  
-  .loader div:nth-child(9) {
-    animation-delay: 200ms;
-  }
-  
-  @keyframes cube-grid {
-    0%,
-    70%,
-    100% {
-      transform: scale(1);
-    }
-    35% {
-      transform: scale(0);
-      opacity: 0.6;
-    }
+  .formnav{
+    background-color: var(--sage-color);
   }
 
+  .form {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    min-width: 85vw;
+    padding: 0;
+  }
+
+  .form .picture{
+    flex: 1 1 30%;
+    justify-self: start;
+    width: 10rem;
+    margin-top: 5rem;
+  }
+  
+  .form .input {
+    flex: 1 1 50%;
+    padding: 2rem;
+    color: white;
+    background-color: var(--moss-color);
+    border-radius: 24px;
+    font-family: Road;
+  }
+  
+  form {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-column-gap: 0.5rem;
+    align-items: center;
+  }
+  
+  fieldset {
+    display: grid;
+    grid-template-columns: min-content max-content;
+    grid-column-gap: 0.5rem;
+    grid-row-gap: 0.8rem;
+  
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  form > input {
+    margin: 0.5rem 0;
+    border: none;
+    border-radius: 4px;
+  }
+  form > textarea{
+    border-radius: 8px;
+  }
+
+  form > label {
+    justify-self: end;
+  }
+
+  label[for="message"] {
+    justify-self: center;
+  }
+
+  fieldset,
+  label[for="message"],
+  textarea,
+  button {
+    grid-column-start: 2;
+  }
+  button {
+    justify-self: start;
+  }
+  
+  legend {
+    grid-column: 1 / span 2;
+    margin-bottom: 1rem;
+  }
+  
+  button {
+    justify-self: center;
+  }
+  input,
+  textarea{
+    transition: transform 200ms ease;
+    color: var(--default-color);
+  }
+  input[type="text"]:hover,
+  input[type="email"]:hover,
+  input[type="tel"]:hover,
+  textarea:hover {
+    transform: scale(1.005)
+  }
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="tel"]:focus,
+  textarea:focus {
+    border-color: transparent;
+    box-shadow: 0 0 0 2px;
+    outline-color: var(--moss-color);
+    transform: scale(1.005)
+  } 
+  
+  input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+  
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  
+    width: 28px;
+    height: 28px;
+    border: 2px solid var(--sage-color);
+    border-radius: 6px;
+    background-color: white;
+  
+    transition: background-color 300ms, border-color 300ms, box-shadow 300ms;
+  }
+  
+  input[type="radio"] {
+    border-radius: 50%;
+  }
+  
+  input[type="radio"]:hover,
+  input[type="radio"]:focus {
+    border: 2px solid var(--sage-color);
+    box-shadow: 0 0 2px var(--sage-color);
+    outline: none;
+  }
+  
+  input[type="radio"]:checked {
+    border-color: var(--sage-color);
+  }
+  
+  input[type="radio"]::after {
+    content: "";
+    display: block;
+    grid-area: 1 / 1 / 2 / 2;
+    background-color: white;
+  }
+  
+  
+  input[type="radio"]::after {
+    width: calc(28px - 8px);
+    height: calc(28px - 8px);
+    background-color: var(--sage-color);
+    border-radius: 50%;
+  
+    transform: scale(0);
+    transition: transform 300ms;
+  }
+  
+  input[type="radio"]:checked::after {
+    transform: scale(1);
+  }
 *,
 *::before,
 *::after {
@@ -465,6 +554,7 @@ header {
 }
 nav {
   background-color: transparent;
+  padding: 1rem;
 }
 .main-menu {
   display: flex;
@@ -537,6 +627,32 @@ nav a::after {
   h1.logo span {
     bottom: 3.2rem;
   }
+
+  form {
+    grid-template-columns: unset;
+    grid-gap: 1rem;
+    align-items: unset;
+  }
+  form > input {
+    margin: unset;
+  }
+
+  form > label {
+    justify-self: unset;
+  }
+
+  label[for="message"] {
+    justify-self: unset;
+  }
+  fieldset,
+  label[for="message"],
+  textarea,
+  button {
+    grid-column-start: unset;
+  }
+  button {
+    justify-self: unset;
+  }
 }
 
 @media (max-width: 500px){
@@ -574,5 +690,21 @@ nav a::after {
   }
   nav ul li:nth-child(2){
     order:-1;
+  }
+  .form{
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  .form .picture{
+    flex: 0 1 15rem;
+    order: 1;
+    margin: 0;
+  }
+  .formnav{
+    background-color: transparent;
+  }
+  .formMain{
+    margin: 0;
   }
 }

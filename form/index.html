@@ -18,12 +18,12 @@
 <meta name="theme-color" content="#ffffff">
     <title>Form</title>
 </head>
-<body>
+<body class="test">
     <div class="hero">
         <div class="header-wrapper">
             <header>
-                <nav>
-                    <div class="menu-icon">
+                <nav class="formnav">
+                    <div class="formnave menu-icon">
                         <div>  
                         </div>
                     </div>
@@ -36,18 +36,46 @@
             </header>
         </div>
     </div> 
-    <main class="form">
-        <div class="loader">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
+    <main class="formMain">
+        <h1>Contact Us</h1>
+        <section class="form">
+            <div class="picture">
+                <img src="../images/Icon_Main_Moss_Fall Creek.svg" alt="fall creek planning icon">
+            </div>
+            <div class="input">
+            <form>
+              
+              <label for="name">Full name</label>
+              <input type="text" name="name" id="name">
+          
+              <label for="email">Email address</label>
+              <input type="email" name="email" id="email" required>
+          
+              <label for="phone">Phone number</label>
+              <input type="tel" name="phone" id="phone">
+          
+              <fieldset>
+                <legend>Client Status</legend>
+          
+                <input type="radio" name="client" id="new" value="new">
+                <label for="tar">New</label>
+
+                <input type="radio" name="client" id="existing" value="existing">
+                <label for="asphalt">Existing</label>
+          
+              </fieldset>
+
+              <label for="message">Message</label>
+              <textarea name="message" id="message" rows="10" placeholder="message"></textarea>
+
+              <label for="referral"> Were you referred? </label>
+              <input type="text" name="referral" id="referral" placeholder="Referrer Name">
+          
+              <button type="submit" class="btn">Submit Now</button>
+          
+            </form>
+            </div>
+          </section>
     </main>
     <script>
         document.querySelector("nav").addEventListener("click", function () {
