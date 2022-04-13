@@ -6,7 +6,7 @@
     --mud-color:   #987955;
     --river-color: #003366;
     --default-color: #616161;
-    --body-color: #E2D7CB;
+    --body-color: #e2d6ca;
 }
 
 @font-face {
@@ -103,7 +103,12 @@ section
 {
     align-self: center;
 }
-
+.svg{
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  padding: 5rem 0
+}
 footer{
   margin-top: 1rem;
   padding: 2rem;
@@ -174,7 +179,7 @@ section p
   width: 100%;
   background-color: var(--river-color);
   font-family: Road;
-  font-size: 32px;
+  font-size: 4rem;
   color: white;
   text-align: center;
   padding: 2rem;
@@ -209,6 +214,120 @@ section p
     border-color: #fff0;
     transform: scale(1.01);
 }
+.modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal .content {
+  display: block;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  background-color: var(--sage-color);
+  border-radius: 6px;
+  width: 80vw;
+  height: 60vh;
+  padding: 2rem;
+}
+.content h2{
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.modal .text-wrapper {
+  flex: 1 1 40%;
+  font-family: "Fredoka One", cursive;
+  font-size: 1.5rem;
+  padding: 0 1rem;
+}
+
+.modal .image-wrapper {
+  flex: 1 1 30%;
+  max-width: 200px;
+  min-width: 80px;
+}
+.modal .close-icon {
+  flex: 0 1 30px;
+  align-self: flex-start;
+  cursor: pointer;
+  margin-top: 2rem;
+  margin-right: 2rem;
+}
+
+.modal .close-icon line {
+  stroke: #9a8983;
+  stroke-width: 10px;
+  stroke-linecap: round;
+}
+
+.modal .close-icon:hover line {
+  stroke: #ffffff;
+  transition: stroke 500ms;
+}
+
+.modalcards{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  width: 100%;
+  justify-content: center;
+  margin-top: 6rem;
+}
+.modalcards img{
+    display: block;
+    width: 100%;
+  }
+  .modalcards .img-wrapper{
+    overflow: hidden;
+    height: 200px;
+    width: 200px;
+  }
+  .modalcard img{
+    transition: transform 500ms;
+  }
+  .modalcard{
+    position: relative;
+    display: inline-block;
+    transition: transform 200ms;
+    overflow: hidden;
+  }
+  .modalcard:hover img{
+    transform: scale(1.05);
+  }
+  .modalcard .title-wrap{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    display: flex;
+    justify-content: center;
+  }
+  .modalcard .title-wrap p{
+    margin: 3rem;
+    font-size: 24px;
+    font-family: Road;
+    color: white;
+    transition: margin 300ms ease-in-out;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.52);
+  }
+
+
+
 img{
     display: block;
     width: 100%;
@@ -331,9 +450,23 @@ img{
     }
     .aboutMain .resume {
       flex: 1 1 50%;
+      flex-grow: 20;
       padding: 2rem;
       border-radius: 24px;
       font-family: Road;
+    }
+    .social{
+      display:flex;
+      flex-direction: row;
+      justify-content: end;
+      width:100%;
+      gap: 2rem;
+    }
+    .svghover{
+      filter: invert(30%)
+    }
+    .svghover:hover{
+      filter: invert(100%)
     }
 
   .formMain{
@@ -680,6 +813,14 @@ nav a::after {
     flex-wrap: wrap;
     gap: 2rem;
   }
+  .modal .content{
+    height: 80vh
+  }
+  .modalcards {
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 4rem;
+  }
   .img-wrapper {
     height: 280px;
     width: 280px;
@@ -702,6 +843,9 @@ nav a::after {
     margin-top: 8rem;
   }
   .card:hover img{
+    transform: scale(1);
+  }
+  .modalcard:hover img{
     transform: scale(1);
   }
  

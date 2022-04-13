@@ -55,6 +55,60 @@
     <h2> Bozeman, Montana</h2>
     <h3> EST 2022</h3>
   </div>
+  <div class="modal" id="modal">
+    <div class="content">
+      <h2>Projects</h2>
+      <div class="modalcards">
+        <div class="modalcard">
+            <a>
+          <div class="img-wrapper">
+          <img src="images/project-example1.jpg" alt="project 1 placeholder">
+          </div>
+            <div class="title-wrap">
+              <p>Project 1</p>
+            </div>
+          <div class="text"></div>
+          </a>
+        </div>
+        <div class="modalcard">
+            <a>
+            <div class="img-wrapper">
+            <img src="images/project-example2.jpg" alt="project 2 placeholder">
+            </div>
+              <div class="title-wrap">
+                <p>Project 2</p>
+              </div>
+            <div class="text"></div>
+            </a>
+          </div>
+          <div class="modalcard">
+              <a>
+            <div class="img-wrapper">
+            <img src="images/project-example3.jpg" alt="project 3 placeholder">
+            </div>
+              <div class="title-wrap">
+                <p>Project 3</p>
+              </div>
+            <div class="text"></div>
+            </a>
+          </div>
+          <div class="modalcard">
+              <a>
+            <div class="img-wrapper">
+            <img src="images/project-example4.jpg" alt="project 4 placeholder">
+            </div>
+              <div class="title-wrap">
+                <p>Project 4</p>
+              </div>
+            </a>
+          </div>
+      </div>
+    </div>
+    <svg class="close-icon" viewBox="0 0 60 60" onclick="closeModal();">
+      <line x1="5%" y1="5%" x2="95%" y2="95%" />
+      <line x1="5%" y1="95%" x2="95%" y2="5%" />
+    </svg>
+  </div>
     <!--About Section-->
     <article class="about">
     <div class="text">
@@ -99,7 +153,7 @@
     </article>
   </main>
     <div class="cards">
-        <div class="card">
+        <div class="card" onclick="modal();">
             <a>
           <div class="img-wrapper">
           <img src="images/project.jpg" alt="man writing on plans">
@@ -128,7 +182,7 @@
             </a>
           </div>
           <div class="card">
-              <a>
+              <a href="https://www.schedulicity.com/scheduling/FCP6ZCQ">
             <div class="img-wrapper">
             <img src="images/schedule.jpg" alt="calendar">
             </div>
@@ -156,7 +210,9 @@
             </a>
           </div>
       </div>
-     <img class="svg" src="images/Icon_Main_Moss_Fall Creek.svg" alt="road leading to mountians SVG" height="250" width="250"/>
+      <div class="svg">
+     <img src="images/Icon_Main_Moss_Fall Creek.svg" alt="road leading to mountians SVG" height="250" width="250"/>
+     </div>
     <footer>
       <p>Copyright &copy; 2021 Fall Creek Planning ('22) - All Rights Reserved.</p>
     </footer>
@@ -164,6 +220,12 @@
     document.querySelector("nav").addEventListener("click", function () {
         this.classList.toggle("close");
       });
+    function modal() {
+      document.getElementById("modal").style.display = "flex"
+    }
+    function closeModal(){
+      document.getElementById("modal").style.display = "none"
+    }
     </script>
 </body>
 </html>
