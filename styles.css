@@ -20,6 +20,7 @@
 }
 *{
   box-sizing: border-box;
+  list-style: 1.15;
 }
 img.fall
 {
@@ -41,42 +42,17 @@ img.svg
 {
   position: relative;
 }
-
-  h1.logo {
-    display: inline-block;
-    color: white;
-    font-size: 4rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    line-height: 1;
-    text-shadow: 0 0 6px #000;
-    font-family:Road;
-  
-    position: absolute;
-    left: 2.5rem;
-    bottom: 1rem;
-  }
-  
-  h1.logo span {
-    font-family: Geo;
-    display: block;
-    font-weight: 400;
-    text-transform: lowercase;
-    /* to position the underline in ::after    */
-    position: relative;
-    bottom:4rem;
-  }
-
-  h1.logo span::after {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: 0px;
-    height: 3px;
-    width: 100%;
-    background-color: white;
-  }
+img.logo{
+  display: inline-block;
+  position: absolute;
+  left: 2.5rem;
+  bottom: 1rem;
+  height: 50%;
+  width: auto;
+}
+.est{
+  margin-left: 5rem;
+}
 
 h2 
 {
@@ -97,8 +73,9 @@ h3
 h4 
 {
     color: var(--river-color); 
-    font-size: 25px; 
+    font-size: 48px; 
     font-family: Road;
+    margin: 0
 }
 
 h5 
@@ -106,11 +83,6 @@ h5
     color: var(--moss-color); 
     font-size: 20px; 
     font-family: Geo;
-}
-
-.homebutton{
-  font-weight: bolder;
-  font-size: 2rem;
 }
 
 body
@@ -130,28 +102,37 @@ main
 section
 {
     align-self: center;
-    padding: 0 1rem;
-    max-width: 90%;
 }
 
+footer{
+  margin-top: 1rem;
+  padding: 2rem;
+  font-size: 1rem;
+  font-family: Geo;
+  color: #111;
+  background-color: var(--sand-color);
+  border-top: 2px solid var(--mud-color);
+}
 .about
 { 
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 3rem;
+  gap: 10rem;
   margin-top: 3rem;
   margin-bottom: 5rem;
   flex-wrap: nowrap;
+  padding: 5rem;
 }
 .about .text{
   flex: 0 1 600px;
+  align-self: baseline;
 }
 .about img {
-  flex: 1 0 400px;
-  width: 400px;
-  height: 600px;
+  flex: 1 1 400px;
+  width: 42vw;
+  height: 70vh;
   aspect-ratio: 1/3;
   overflow: hidden;
   object-fit: cover;
@@ -246,6 +227,8 @@ img{
     margin: 2rem 0;
     width: 100%;
     justify-content: center;
+    background-color: var(--mud-color);
+    padding: 5rem 1rem;
   }
   .cards img{
       display: block;
@@ -314,6 +297,45 @@ img{
       color: white;
       font-family: Geo;
     }
+    .aboutMain{
+      margin: 8rem 0;
+    }
+    .aboutMain h1{
+      font-size: 48px;
+      color:var(--river-color);
+      font-family: Road;
+      text-align: center;
+    }
+
+    .aboutMain h2{
+      color: var(--moss-color);
+      text-align: center;
+      line-height: 100%;
+    }
+    
+    .aboutUs {
+      display: flex;
+      flex-direction: row;
+      gap: 5rem;
+      min-width: 85vw;
+      padding: 2rem 1rem;
+      background-color: #C6C7BC;
+      border-radius: 5rem;
+    }
+  
+    .aboutUs .picture{
+      flex: 0 1 30%;
+      justify-self: start;
+      width: 10rem;
+      margin-top: 5rem;
+    }
+    .aboutMain .resume {
+      flex: 1 1 50%;
+      padding: 2rem;
+      border-radius: 24px;
+      font-family: Road;
+    }
+
   .formMain{
     margin: 8rem 0;
     text-align: center;
@@ -381,6 +403,9 @@ img{
   form > label {
     justify-self: end;
   }
+  label[for="toggle"]{
+    grid-column-start: 1;
+  }
 
   label[for="message"] {
     justify-self: center;
@@ -389,7 +414,8 @@ img{
   fieldset,
   label[for="message"],
   textarea,
-  button {
+  button,
+  input[type="checkbox"] {
     grid-column-start: 2;
   }
   button {
@@ -425,59 +451,96 @@ img{
     transform: scale(1.005)
   } 
   
-  input[type="radio"] {
-    appearance: none;
-    -webkit-appearance: none;
-  
-    display: grid;
-    align-items: center;
-    justify-content: center;
-  
-    width: 28px;
-    height: 28px;
-    border: 2px solid var(--sage-color);
-    border-radius: 6px;
-    background-color: white;
-  
-    transition: background-color 300ms, border-color 300ms, box-shadow 300ms;
-  }
-  
-  input[type="radio"] {
-    border-radius: 50%;
-  }
-  
-  input[type="radio"]:hover,
-  input[type="radio"]:focus {
-    border: 2px solid var(--sage-color);
-    box-shadow: 0 0 2px var(--sage-color);
-    outline: none;
-  }
-  
-  input[type="radio"]:checked {
-    border-color: var(--sage-color);
-  }
-  
-  input[type="radio"]::after {
-    content: "";
-    display: block;
-    grid-area: 1 / 1 / 2 / 2;
-    background-color: white;
+  .toggle{
+    margin: 5px 40px;
+  position: relative;
+  width: 77px;
+  user-select: none;
   }
   
   
-  input[type="radio"]::after {
-    width: calc(28px - 8px);
-    height: calc(28px - 8px);
-    background-color: var(--sage-color);
-    border-radius: 50%;
+.toggle-checkbox{
+  position: absolute;
+  left: -9999px;
+}
   
-    transform: scale(0);
-    transition: transform 300ms;
-  }
+.toggle-label
+{
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 18px;
+}
   
-  input[type="radio"]:checked::after {
-    transform: scale(1);
-  }
+
+.toggle-inner{
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+  
+.toggle-inner:before, .toggle-inner:after
+{
+  display: block;
+  float: left;
+  width: 50%;
+  height: 34px;
+  padding: 0;
+  line-height: 34px;
+  font-size: 14px;
+  color: white;
+  box-sizing: border-box;
+  font-weight: 600;
+}
+  
+
+.toggle-inner:before{
+  content: "Yes";
+  padding-right: 10px;
+  background-color: var(--river-color);
+  color: #FFFFFF;
+
+}
+.toggle-inner:after{
+  content: "No";
+  padding-right: 13px;
+  background-color: var(--sage-color);
+  color: white;
+  text-align: right;
+}
+  
+
+.toggle-switch{
+  display: block;
+  width: 27px;
+  height: 27px;
+  margin: 5px;
+  background: #FFFFFF;
+  position: absolute;
+  bottom: -2px;
+  right: 40px;
+  border-radius: 50%;
+  transition: all 0.3s ease-in 0s;
+}
+  
+
+.toggle-checkbox:checked + .toggle-label .toggle-inner{
+  margin-left: 0
+}
+  
+
+.toggle-checkbox:checked + .toggle-label .toggle-switch{
+  right: 0px
+}
+
+.open{
+  display: block !important;
+}
+.referral{
+  display: none;
+}
+
 *,
 *::before,
 *::after {
@@ -554,7 +617,7 @@ header {
 }
 nav {
   background-color: transparent;
-  padding: 1rem;
+  padding: .5rem;
 }
 .main-menu {
   display: flex;
@@ -572,8 +635,8 @@ nav {
   cursor: pointer;
   position: relative;
   margin: 0 2.5rem;
-  padding: .5rem;
-  font-size: 1.75rem;
+  padding: .25rem;
+  font-size: 2.5rem;
   white-space: nowrap;
   user-select: none;
 }
@@ -595,6 +658,10 @@ nav a::after {
   transform-origin: left;
   }
 
+  .homebutton{
+    font-size: 3rem !important;
+  }
+
   
 @media (max-width: 900px) {
   .about{
@@ -606,6 +673,7 @@ nav a::after {
     aspect-ratio: unset;
     object-fit: contain;
     width:100%;
+    height: auto;
     margin-bottom: 1rem;
   }
   .cards {
@@ -617,17 +685,26 @@ nav a::after {
     width: 280px;
   }
   .card:hover .title-wrap p{
-    margin-left: 0;
+    margin-left: 3rem;
+    transition:none;
+    text-decoration: none;
   }
-  h1.logo{
-    font-size: 3.2rem;
-    left: 2rem;
-    bottom: -1rem;
+  .card:hover .title-wrap{
+    background-color: transparent;
   }
-  h1.logo span {
-    bottom: 3.2rem;
+  .card:hover .title-wrap p{
+    text-decoration: none;
+    transition: none;
   }
-
+  .card:hover .desc-wrap{
+    visibility: hidden;
+    opacity:0;
+    margin-top: 8rem;
+  }
+  .card:hover img{
+    transform: scale(1);
+  }
+ 
   form {
     grid-template-columns: unset;
     grid-gap: 1rem;
@@ -653,6 +730,34 @@ nav a::after {
   button {
     justify-self: unset;
   }
+  .aboutUs{
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    background-color: transparent;
+  }
+  .aboutMain .picture{
+    flex: 0 1 22rem;
+    margin: 0;
+  }
+  .aboutMain .resume{
+    background-color: #C6C7BC;
+    border-radius: 5rem;
+  }
+  .form{
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  .form .picture{
+    flex: 0 1 22rem;
+    order: 1;
+    margin: 0;
+  }
+  .toggle{
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 
 @media (max-width: 500px){
@@ -660,11 +765,11 @@ nav a::after {
     display: block;
     z-index: 2;
   }
-  h1.logo{
-    font-size: 3rem;
+  .close .menu-icon{
+    position: fixed;
   }
-  h1.logo span {
-    bottom: 3rem;
+  img.logo{
+    height: 75%;
   }
   .main-menu {
     position: fixed;
@@ -691,20 +796,13 @@ nav a::after {
   nav ul li:nth-child(2){
     order:-1;
   }
-  .form{
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-  }
-  .form .picture{
-    flex: 0 1 15rem;
-    order: 1;
-    margin: 0;
-  }
   .formnav{
     background-color: transparent;
   }
   .formMain{
+    margin: 0;
+  }
+  .aboutMain{
     margin: 0;
   }
 }

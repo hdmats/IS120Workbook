@@ -29,7 +29,7 @@
                     </div>
                     <ul class="main-menu">
                         <li><a href="../about/" class="active">about</a></li>
-                        <li><a href="../" class="homebutton active">home</a></li>
+                        <li><a href="../" class="active">home</a></li>
                         <li><a href="">form</a></li>
                     </ul>
                 </nav>
@@ -45,41 +45,47 @@
             <div class="input">
             <form>
               
-              <label for="name">Full name</label>
-              <input type="text" name="name" id="name">
+            <label for="name">Full name</label>
+            <input type="text" name="name" id="name">
           
-              <label for="email">Email address</label>
-              <input type="email" name="email" id="email" required>
+            <label for="email">Email address</label>
+            <input type="email" name="email" id="email" required>
           
-              <label for="phone">Phone number</label>
-              <input type="tel" name="phone" id="phone">
-          
-              <fieldset>
-                <legend>Client Status</legend>
-          
-                <input type="radio" name="client" id="new" value="new">
-                <label for="new">New</label>
+            <label for="phone">Phone number</label>
+            <input type="tel" name="phone" id="phone">
 
-                <input type="radio" name="client" id="existing" value="existing">
-                <label for="client">Existing</label>
-          
-              </fieldset>
+            <label for="message">Message</label>
+            <textarea name="message" id="message" rows="10" placeholder="add text here"></textarea>
+            
+            <label for="toggle">Are you a New Client</label>
+            <div class="toggle">
+                <input id="toggle" class="toggle-checkbox" type="checkbox" />
+                <label for="toggle" class="toggle-label">
+                    <span class="toggle-inner"></span>
+                    <span class="toggle-switch"></span>
+                </label>
+            </div>
 
-              <label for="message">Message</label>
-              <textarea name="message" id="message" rows="10" placeholder="message"></textarea>
+            <label for="referral" id="referral-label" class="referral"> Were you referred? </label>
+            <input type="text" name="referral" id="referral"  class="referral" placeholder="Referrer Name (optional)">
 
-              <label for="referral"> Were you referred? </label>
-              <input type="text" name="referral" id="referral" placeholder="Referrer Name">
-          
-              <button type="submit" class="btn">Submit Now</button>
+            <button type="submit" class="btn">Submit Now</button>
           
             </form>
             </div>
           </section>
     </main>
+     <footer>
+      <p>Copyright &copy; 2021 Fall Creek Planning ('22) - All Rights Reserved.</p>
+    </footer>
     <script>
         document.querySelector("nav").addEventListener("click", function () {
             this.classList.toggle("close");
+          });
+        let label = document.getElementById("referral-label");
+        document.querySelector("[type='checkbox'").addEventListener("click", function () {
+            referral.classList.toggle("open");
+            label.classList.toggle("open");
           });
     </script>
 </body>
