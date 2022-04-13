@@ -940,6 +940,9 @@ nav a::after {
   nav ul li:nth-child(2){
     order:-1;
   }
+  .homebutton{
+    font-size: 2.5rem !important;
+  }
   .formnav{
     background-color: transparent;
   }
