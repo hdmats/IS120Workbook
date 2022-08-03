@@ -40,13 +40,16 @@
         <h1>Contact Us</h1>
         <section class="form">
             <div class="picture">
-                <img src="../images/Icon_Main_Moss_Fall Creek.svg" alt="fall creek planning icon">
+                <img src="../images/Icon_Main_Moss_FallCreek.png" alt="fall creek planning icon">
             </div>
             <div class="input">
-            <form>
+            <form action="https://formsubmit.co/ad3db628eb538850e39b87634d33dc49" method="POST">
               
             <label for="name">Full name</label>
-            <input type="text" name="name" id="name">
+            <input type="text" name="name" id="name" required>
+
+            <label for="company">Company name</label>
+            <input type="text" name="company" id="company" required>
           
             <label for="email">Email address</label>
             <input type="email" name="email" id="email" required>
@@ -59,26 +62,52 @@
             
             <label for="toggle">Are you a New Client</label>
             <div class="toggle">
-                <input id="toggle" class="toggle-checkbox" type="checkbox" />
+                <input id="toggle" class="toggle-checkbox" type="checkbox"/>
                 <label for="toggle" class="toggle-label">
                     <span class="toggle-inner"></span>
                     <span class="toggle-switch"></span>
                 </label>
             </div>
 
+            <input type="text" id="newClient" value="No" style="display:none">
+
             <label for="referral" id="referral-label" class="referral"> Were you referred? </label>
             <input type="text" name="referral" id="referral"  class="referral" placeholder="Referrer Name (optional)">
 
-            <button type="submit" class="btn">Submit Now</button>
-          
+            <input type="hidden" id="subject" name="_subject" value="">
+            <input type="hidden" name="_template" value="box">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="_honey" style="display:none">
+            <input type="hidden" id="replyto" name="_replyto" value="">
+
+            <div></div>
+            <div onmouseover="subject();">
+            <button type="submit" class="btn">Submit</button>
+            </div>
+            
+
             </form>
             </div>
-          </section>
+        </section>
     </main>
      <footer>
       <p>Copyright &copy; 2021 Fall Creek Planning ('22) - All Rights Reserved.</p>
     </footer>
     <script>
+        function subject()
+        {
+            if (document.getElementById("toggle").checked)
+            {
+                document.getElementById("newClient").value = "Yes";
+                document.getElementById("subject").value = "New Client! " + document.getElementById("name").value;
+            }
+            else
+            {
+                document.getElementById("subject").value = "New message from " + document.getElementById("name").value;
+            }
+            document.getElementById("replyto").value = document.getElementById("email").value;
+        };
+
         document.querySelector("nav").addEventListener("click", function () {
             this.classList.toggle("close");
           });
